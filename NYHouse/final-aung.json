@@ -1,0 +1,25 @@
+{
+    "schema": "final-aung",
+    "includesDdl": true,
+    "includesViewsDdl": true,
+    "includesData": true,
+    "tables": [
+        "NYHouse"
+    ],
+    "views": [
+        "NYDataStructureView",
+        "NYHousingView"
+    ],
+    "events": [],
+    "functions": [],
+    "procedures": [
+        "getAveragePriceOfPropertyType",
+        "getHousingOnSubLocality",
+        "getHousingListAndAveragePrice"
+    ],
+    "basenames": {
+        "NYHouse": "final-aung@NYHouse",
+        "NYDataStructureView": "final-aung@NYDataStructureView",
+        "NYHousingView": "final-aung@NYHousingView"
+    }
+}

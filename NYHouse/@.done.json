@@ -1,0 +1,17 @@
+{
+    "end": "2024-02-21 00:27:26",
+    "dataBytes": 1328279,
+    "tableDataBytes": {
+        "final-aung": {
+            "NYHouse": 1328279
+        }
+    },
+    "tableRows": {
+        "final-aung": {
+            "NYHouse": 4801
+        }
+    },
+    "chunkFileBytes": {
+        "final-aung@NYHouse.tsv": 1328279
+    }
+}

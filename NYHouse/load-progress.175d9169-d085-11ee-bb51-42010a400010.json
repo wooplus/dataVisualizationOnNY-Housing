@@ -1,0 +1,7 @@
+{"op":"SERVER-UUID","done":true,"timestamp":1708498190175,"uuid":"175d9169-d085-11ee-bb51-42010a400010"}
+{"op":"SCHEMA-DDL","done":false,"timestamp":1708498192317,"schema":"final-aung"}
+{"op":"TABLE-DDL","done":false,"timestamp":1708498192317,"schema":"final-aung","table":"NYHouse"}
+{"op":"TABLE-DDL","done":true,"timestamp":1708498192748,"schema":"final-aung","table":"NYHouse"}
+{"op":"SCHEMA-DDL","done":true,"timestamp":1708498194080,"schema":"final-aung"}
+{"op":"TABLE-DATA","done":false,"timestamp":1708498194081,"schema":"final-aung","table":"NYHouse","chunk":-1}
+{"op":"TABLE-DATA","done":true,"timestamp":1708498194918,"schema":"final-aung","table":"NYHouse","chunk":-1,"bytes":1328279,"raw_bytes":1328279,"rows":4801}

@@ -1,0 +1,33 @@
+{
+    "dumper": "mysqlsh Ver 8.2.1 for macos13 on x86_64 - for MySQL 8.2.0 (MySQL Community Server (GPL))",
+    "version": "2.0.1",
+    "origin": "dumpSchemas",
+    "options": {
+        "chunking": false,
+        "compression": "none",
+        "threads": 6
+    },
+    "schemas": [
+        "final-aung"
+    ],
+    "basenames": {
+        "final-aung": "final-aung"
+    },
+    "defaultCharacterSet": "utf8mb4",
+    "tzUtc": true,
+    "bytesPerChunk": 64000000,
+    "user": "root",
+    "hostname": "Lins-MacBook-Pro.local",
+    "server": "localhost",
+    "serverVersion": "8.0.31-google",
+    "binlogFile": "",
+    "binlogPosition": 0,
+    "gtidExecuted": "",
+    "gtidExecutedInconsistent": false,
+    "consistent": true,
+    "targetVersion": "8.2.1",
+    "partialRevokes": true,
+    "compatibilityOptions": [],
+    "capabilities": [],
+    "begin": "2024-02-21 00:27:21"
+}

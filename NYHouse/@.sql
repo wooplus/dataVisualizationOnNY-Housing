@@ -1,0 +1,5 @@
+-- MySQLShell dump 2.0.1  Distrib Ver 8.2.1 for macos13 on x86_64 - for MySQL 8.2.0 (MySQL Community Server (GPL)), for macos13 (x86_64)
+--
+-- Host: 34.75.9.212
+-- ------------------------------------------------------
+-- Server version	8.0.31

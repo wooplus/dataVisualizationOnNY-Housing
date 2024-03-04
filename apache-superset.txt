@@ -1,0 +1,77 @@
+# Create the apache superset compute engine vm.
+gcloud compute instances create superset \
+    --image-family ubuntu-2004-lts \
+    --image-project ubuntu-os-cloud \
+    --machine-type n1-standard-1 \
+    --description superset \
+    --zone us-east1-c \
+    --tags http-server \
+    --metadata=startup-script='#!/bin/bash
+    curl -sSL https://storage.googleapis.com/jose-bucket-mac250/script.sh | bash'
+
+# Connect to your vm via connection strings (Optional and used for ssl)
+# mysql+mysqlconnector://{username}:{password}@{host}/{database}
+# mysql+mysqlconnector://root:'P@$$w0rd'@35.243.250.29/lottery
+
+# Create a static ip address for your superset vm.
+gcloud compute addresses create superset \
+    --project=centering-crow-300714 \
+    --description="Reserved Apache Superset Static IP Address" \
+    --network-tier=STANDARD \
+    --region=us-east1
+
+STATIC_IP=$(gcloud compute addresses describe superset \
+    --project=centering-crow-300714 \
+    --region=us-east1 \
+    --format='value(address)')   
+
+# To see the static ip address echo $STATIC_IP
+echo http://$STATIC_IP
+
+gcloud compute instances delete-access-config superset \
+    --project=centering-crow-300714 \
+    --zone=us-east1-c \
+    --access-config-name=external-nat \
+    --quiet
+
+gcloud compute instances add-access-config superset \
+    --project=centering-crow-300714 \
+    --zone=us-east1-c \
+    --address=$STATIC_IP \
+    --network-tier=STANDARD
+
+# Some SQL Questions to Answer
+Which month has the highest jackpot?
+
+SELECT Month, SUM(MonthCount) SumMonthCount  FROM
+(SELECT MONTH(DATE) AS Month, COUNT(MONTH(DATE)) AS MonthCount  
+FROM `mega-millions`
+GROUP BY DATE ) t1
+GROUP BY Month
+ORDER BY SumMonthCount DESC
+
+What is the number of jackpots by month and year?
+
+SELECT Month, t1.Year, SUM(MonthCount) SumMonthCount  FROM
+(SELECT MONTH(DATE) AS Month, YEAR(DATE) AS Year, COUNT(MONTH(DATE)) AS MonthCount  
+FROM `mega-millions`
+GROUP BY DATE ) t1
+GROUP BY Month, Year
+HAVING Year = '2023'
+ORDER BY SumMonthCount DESC
+
+What is the highest jackpot by year?
+
+SELECT Year, SUM(YearCount) SumYearCount  FROM
+(SELECT YEAR(DATE) AS Year, COUNT(DATE) AS YearCount 
+FROM `mega-millions`
+GROUP BY DATE ) t1
+GROUP BY Year
+ORDER BY Year DESC
+
+What is the overall average jackpot?
+
+What is the overall largest jackpot?
+
+What are the top five largest jackpots since 2010?
+

@@ -1,0 +1,40 @@
+{
+    "options": {
+        "schema": "final-aung",
+        "table": "NYHouse",
+        "columns": [
+            "BrokerTitle",
+            "Type",
+            "Price",
+            "Beds",
+            "Bath",
+            "PropertySqft",
+            "Address",
+            "State",
+            "MainAddress",
+            "AdministrativeAreaLevel2",
+            "Locality",
+            "SubLocality",
+            "StreetName",
+            "LongName",
+            "FormattedAddress",
+            "Latitude",
+            "Longitude"
+        ],
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv",
+    "chunking": false,
+    "compression": "none",
+    "primaryIndex": [],
+    "partitions": [],
+    "basenames": {}
+}
